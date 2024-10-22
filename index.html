@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWO by Sushmita Shukla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #D4BEE4; /* Light lavender for background */
+            color: #FFF; /* White text for contrast */
+            font-family: "Playwrite GB S", cursive;
+            margin: 0;
+            padding: 0;
+        }
+        /* Navbar styles */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #3B1E54; /* Darker purple for navbar */
+            padding: 15px;
+            display: flex;
+            justify-content: center; /* Centering items */
+            z-index: 1000; /* Ensure navbar is above other content */
+            transition: all 0.25s ease; /* Smooth transition for size changes */
+        }
+        .navbar a {
+            color: white; /* White text for links */
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px; /* Default border radius */
+            transition: background-color 0.3s, border-radius 0.5s; /* Smooth background and border-radius change */
+            margin: 0 10px; /* Add some horizontal spacing between links */
+        }
+        .navbar.shrink {
+            top: 15px;
+            padding: 10px; /* Reduced padding when shrunk */
+            border-radius: 20px; /* Pill shape */
+            background-color: rgba(64, 48, 57, 0.217); /* More transparent when shrunk */
+            backdrop-filter: blur(10px); /* Blur effect for the background */
+            transform: scale(0.9); /* Scale down the navbar */
+        }
+        .navbar a:hover {
+            background-color: rgba(0, 0, 0, 0.52); /* Background color on hover */
+            border-radius: 15px; /* Set border radius on hover */
+        }
+        /* Main content styles */
+        main {
+            padding: 20px;
+        }
+        /* Thick break line styles */
+        hr {
+            border: 3px solid #3B1E54;
+            width: 100%;
+            margin: 30px 0;
+        }
+        /* Flex container for image and text */
+        .content-container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        /* Image styles */
+        .img {
+            flex: 1; /* Allow the image to take space */
+            max-width: 400px; /* Max width for desktop */
+        }
+        .img img {
+            width: 100%; /* Make the image responsive */
+            border-radius: 20px; /* Rounded corners */
+            margin-top: 20px; /* Adjust margin for spacing */
+        }
+        /* Text container styles */
+        .text-container {
+            margin-left: -70px; /* Space between image and text */
+            color: #3B1E54;
+            flex: 2; /* Allow the text to take more space */
+        }
+        /* Media query for mobile optimization */
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column; /* Stack image and text vertically */
+                align-items: center; /* Center align items */
+            }
+            .text-container {
+                margin-left: 0; /* Remove left margin on mobile */
+                text-align: center; /* Center the text */
+                margin-top: 20px; /* Add space between image and text */
+            }
+        }
+        @media (min-width: 768px) {
+            .navbar.shrink {
+                margin-left: 475px;
+                margin-right: 475px;
+            }
+        }
+
+        /* Styles for the hover effect */
+        .container {
+            display: flex;
+            justify-content: left; /* Center the boxes */
+            width: 100%;
+            padding: 4% 2%;
+            box-sizing: border-box;
+            margin-top: 50px; /* Space above the container */
+            align-items: center; /* Center items vertically */
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .2s;
+            margin: 0 2%;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, .1);
+            line-height: 0;
+            max-width: 200px; /* Limit max width of boxes */
+        }
+
+        .box > img {
+            width: 125%;
+            height: calc(100% - 10vh);
+            object-fit: cover;
+            transition: .2s;
+        }
+
+        .box > span {
+            font-size: 3.8vh;
+            display: block;
+            text-align: center;
+            height: 10vh;
+            line-height: 2.6;
+        }
+
+        .box:hover { flex: 1 1 50%; }
+        .box:hover > img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="#home">Home</a>
+        <a href="#nutrition">Nutrition</a>
+        <a href="#fitness">Workout</a>
+        <a href="#contact">Contact</a>
+    </div>
+    
+    <main>
+        <h1 style="margin-top: 175px;">
+            <div style="font-family: Outfit, serif; color: black; font-size: 50px;">FITTER WAY OUT</div>
+            <div style="color: #3B1E54;">by Sushmita Shukla</div>
+        </h1>
+        <p style="color: #3B1E54; font-weight: 900;">Create a way of life, not a phase of life</p>
+    
+        <!-- Thick break line between text and image -->
+        <hr style="margin-top: 200px;margin-bottom: 50px;">
+    
+        <!-- Flex container for image and text -->
+        <div class="content-container">
+            <!-- Image Section -->
+            <div class="img">
+                <img src="./WhatsApp Image 2024-10-22 at 19.27.19.jpeg" style="width: 300px;" alt="Fitness Image">
+            </div>
+        
+            <!-- Text Section -->
+            <div class="text-container">
+                <h2 style="font-family: Outfit, serif; font-size: 30px;">About</h2>
+                <p>
+                    Fitness has much more to do than just having a slimmer waist. It is defined by how you feel; it is a lifestyle that you follow for the value of your soundness rather than people's judgments. Through this program, I'll be guiding you to get back to your basics and form a sustainable plan that can be followed as a lifestyle. Because deprivation cannot be a way of life. This is a fitter way out from those boring fads that you have been hearing, as I am here to help you break the cycle of being on and off a diet. SAY YES TO YOUR FAVOURITE FOODS, BE IT THE NORTH INDIAN RAJMA CHAWAL OR PARATHAS. I am here to add balance over restriction.
+                </p>
+            </div>
+        </div>
+
+        <!-- Second thick break line -->
+        <hr style="margin-top: 60px;">
+
+        <!-- Hover Effect Section -->
+        <div class="container">
+            <div class="box">
+                <img src="./bfore.jpeg" alt="Image 1">
+                <span style="font-family: Outfit,serif;">Before</span>
+            </div>
+            <div class="box">
+                <img src="./aftr.jpeg" alt="Image 2">
+                <span style="font-family: Outfit,serif;">After</span>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // JavaScript to handle the shrinking navbar effect
+        const navbar = document.getElementById('navbar');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.classList.add('shrink');
+            } else {
+                navbar.classList.remove('shrink');
+            }
+        };
+    </script>
+</body>
+</html>
