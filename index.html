@@ -102,6 +102,20 @@
             hr {
                 margin: 20px 0; /* Adjust margin for hr on mobile */
             }
+            .navbar a:hover {
+                background-color: rgba(0, 0, 0, 0); /* Background color on hover */
+                border-radius: 100px; /* Set border radius on hover */
+                transition: 0.3s ease;
+                transform: scale(1.15);
+            }
+            .navbar.shrink {
+                top: 15px;
+                padding: 10px; /* Reduced padding when shrunk */
+                border-radius:20px; /* Pill shape */
+                background-color: rgba(64, 48, 57, 0.217); /* More transparent when shrunk */
+                backdrop-filter: blur(10px); /* Blur effect for the background */
+                transform: scale(0.8); /* Scale down the navbar */
+            }
         }
 
         /* Styles for the hover effect */
@@ -145,11 +159,36 @@
             width: 100%;
             height: 100%;
         }
+
+        /* Styles for the additional text section */
+        .text-section {
+            flex: 1;
+            margin-right: 20px; /* Space between text and images */
+            text-align: left; /* Left align text */
+        }
+
+        @media (max-width: 768px) {
+            .text-section {
+                margin-right: 0; /* Remove right margin on mobile */
+                text-align: center; /* Center text on mobile */
+                padding: 10px; /* Add some padding */
+            }
+
+            .box {
+                max-width: 90%; /* Limit max width of boxes on mobile */
+                margin: 10px 0; /* Add some margin for spacing */
+            }
+
+            .box > img {
+                width: 100%; /* Ensure the image is responsive */
+                height: auto; /* Maintain aspect ratio */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="navbar" id="navbar">
-        <a href="#home">Home</a>
+        <a href="#">Home</a> <!-- Modified href -->
         <a href="#nutrition">Nutrition</a>
         <a href="#fitness">Workout</a>
         <a href="#contact">Contact</a>
@@ -186,13 +225,22 @@
 
         <!-- Hover Effect Section -->
         <div class="container">
+            <!-- Text Section -->
+            <div class="text-section">
+                <h3 style="font-family: Outfit, serif; color: #3B1E54;font-size: 30px;">Transformation Journey</h3>
+                <p style="font-family: Playwrite GB S, cursive; color: #3B1E54;">
+                    Witness the incredible transformation! Our program focuses on sustainable fitness, ensuring you enjoy your favorite foods while achieving your goals. 
+                    Here are the results of dedication and balance:
+                </p>
+            </div>
+
             <div class="box">
                 <img src="./bfore.jpeg" alt="Image 1">
-                <span style="font-family: Outfit,serif;">Before</span>
+                <span style="font-family: Outfit, serif;">Before</span>
             </div>
             <div class="box">
                 <img src="./aftr.jpeg" alt="Image 2">
-                <span style="font-family: Outfit,serif;">After</span>
+                <span style="font-family: Outfit, serif;">After</span>
             </div>
         </div>
 
@@ -208,7 +256,15 @@
                 navbar.classList.remove('shrink');
             }
         };
+
+        // Smooth scroll to top on clicking home link
+        document.querySelector('.navbar a[href="#"]').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor click behavior
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scroll effect
+            });
+        });
     </script>
 </body>
 </html>
-
