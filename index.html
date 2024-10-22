@@ -90,11 +90,17 @@
                 text-align: center; /* Center the text */
                 margin-top: 20px; /* Add space between image and text */
             }
-        }
-        @media (min-width: 768px) {
-            .navbar.shrink {
-                margin-left: 475px;
-                margin-right: 475px;
+            .navbar {
+                padding: 10px 5px; /* Adjust padding for mobile */
+            }
+            .navbar a {
+                margin: 0 -7px; /* Adjust spacing between links */
+            }
+            .img {
+                max-width: 100%; /* Full width for images on mobile */
+            }
+            hr {
+                margin: 20px 0; /* Adjust margin for hr on mobile */
             }
         }
 
@@ -205,3 +211,4 @@
     </script>
 </body>
 </html>
+
