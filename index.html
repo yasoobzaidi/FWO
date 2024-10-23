@@ -12,12 +12,32 @@
 
     <style>
         body {
-            background-color: #D4BEE4; /* Light lavender for background */
-            color: #FFF; /* White text for contrast */
-            font-family: "Playwrite GB S", cursive;
-            margin: 0;
-            padding: 0;
-        }
+    margin: 0;
+    padding: 0;
+    font-family: "Playwrite GB S", cursive;
+    color: #FFF; /* White text for contrast */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.parallax {
+    background-image: url(./IMG_0345.JPEG.jpg); /* Background image */
+    height: 100vh; /* Full viewport height */
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-size: cover; /* Cover the entire area */
+    position: relative; /* Positioning for child elements */
+    z-index: -1; /* Behind all content */
+    transition: filter 0.5s ease; /* Smooth transition for blur effect */
+}
+
+/* Content container to overlay text and other elements */
+.content {
+    position: relative; /* Allow positioning relative to the parent */
+    z-index: 1; /* Ensure content is above the background */
+    padding: 20px; /* Adjust padding as needed */
+}
+
         /* Navbar styles */
         .navbar {
             font-family: "Outfit" , serif;
@@ -244,13 +264,16 @@
     </style>
 </head>
 <body>
+    <div class="parallax"></div> <!-- Background image with parallax effect -->
+    
+    <div class="content"> <!-- Overlay content -->
     <div class="navbar" id="navbar">
         <a href="#">Home</a> <!-- Modified href -->
         <a href="#programs">Programs</a>
         <a href="#contact">Contact</a>
     </div>
     
-    <main>
+    <div>
         <h1 style="margin-top: 175px;">
             <div style="font-family: Outfit, serif; color: black; font-size: 50px;">FITTER WAY OUT</div>
             <div style="color: #3B1E54;">by Sushmita Shukla</div>
@@ -337,7 +360,7 @@
 
 <hr style="margin-top: 60px; margin-bottom: 60px;">
 
-
+</div>
     </main>
 
     <script>
@@ -377,6 +400,14 @@
                 }
             });
         });
+        window.addEventListener('scroll', function() {
+        const parallax = document.querySelector('.parallax');
+        const scrollPosition = window.scrollY; // Current scroll position
+
+        // Calculate blur based on scroll position
+        const blurAmount = Math.min(scrollPosition / 10, 20); // Limit the blur effect
+        parallax.style.filter = `blur(${blurAmount}px)`; // Apply blur
+    });
     </script>
     
     
