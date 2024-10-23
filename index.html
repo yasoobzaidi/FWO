@@ -266,7 +266,158 @@
             margin-right: 8px; /* Space between icon and text */
             font-size: 20px; /* Icon size */
         }
+        ul {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center list items horizontally */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style-type: none; /* Remove bullet points */
+}
 
+/* Media query for desktop */
+@media (min-width: 768px) { /* Adjust the min-width as needed for your design */
+    ul {
+        margin-top: 50px; /* Add top margin for desktop */
+        margin-bottom: 80px; /* Add bottom margin for desktop */
+    }
+}
+
+    
+    ul li {
+      list-style:none;
+      margin:0 5px;
+    }
+    
+    ul li a .fa {
+      font-size: 40px;
+      color: #262626;
+      line-height:80px;
+      transition: .5s;
+      padding-right: 14px;
+    }
+    
+    ul li a span {
+      padding:0;
+      margin:0;
+      position:absolute;
+      top: 30px;
+      color: #262626;
+      letter-spacing: 4px;
+      transition: .5s;
+    }
+    
+    ul li a {
+      text-decoration: none;
+      display:absolute;
+      display:block;
+      width:210px;
+      height:80px;
+      background: #fff;
+      text-align:left;
+      padding-left: 20px;
+      transform: rotate(-30deg) skew(25deg) translate(0,0);
+      transition:.5s;
+      box-shadow: -20px 20px 10px rgba(0,0,0,.5);
+    }
+    ul li a:before {
+      content: '';
+      position: absolute;
+      top:10px;
+      left:-20px;
+      height:100%;
+      width:20px;
+      background: #b1b1b1;
+      transform: .5s;
+      transform: rotate(0deg) skewY(-45deg);
+    }
+    ul li a:after {
+      content: '';
+      position: absolute;
+      bottom:-20px;
+      left:-10px;
+      height:20px;
+      width:100%;
+      background: #b1b1b1;
+      transform: .5s;
+      transform: rotate(0deg) skewX(-45deg);
+    }
+    
+    ul li a:hover {
+      transform: rotate(-30deg) skew(25deg) translate(20px,-15px);
+      box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+    }
+    
+    ul li:hover .fa {
+      color:#fff;
+    }
+    
+    ul li:hover span {
+      color:#fff;
+    }
+    
+    ul li:hover:nth-child(1) a{
+      background: #3b5998;
+    }
+    ul li:hover:nth-child(1) a:before{
+      background: #365492;
+    }
+    ul li:hover:nth-child(1) a:after{
+      background: #4a69ad;
+    }
+    
+    ul li:hover:nth-child(2) a{
+      background: #25D366;
+    }
+    ul li:hover:nth-child(2) a:before{
+      background: #2da22d;
+    }
+    ul li:hover:nth-child(2) a:after{
+      background: #62fb95;
+    }
+    
+    ul li:hover:nth-child(3) a{
+      background: #dd4b39;
+    }
+    ul li:hover:nth-child(3) a:before{
+      background: #b33a2b;
+    }
+    ul li:hover:nth-child(3) a:after{
+      background: #e66a5a;
+    }
+    
+    ul li:hover:nth-child(4) a{
+      background: #e4405f;
+    }
+    ul li:hover:nth-child(4) a:before{
+      background: #d81c3f;
+    }
+    ul li:hover:nth-child(4) a:after{
+      background: #e46880;
+    }
+    .heading{
+            margin-top: 60px;
+        }
+    @media (max-width: 768px) {
+        ul {
+            flex-direction: column; /* Change to column layout for mobile */
+            align-items: center; /* Center align items */
+            margin: 0; /* Reset margin */
+            padding: 0; /* Reset padding */
+        }
+    
+        ul li {
+            margin: 30px 0; /* Add vertical spacing between items */
+        }
+    
+        ul li a {
+            scale: 0.8;
+            transform: rotate(0deg) skew(0deg) translate(0, 0); /* Reset transformation */
+        }
+        .heading{
+            margin-top: 5px;
+        }
+    }
+    
 
 
     </style>
@@ -278,7 +429,7 @@
     <div class="navbar" id="navbar">
         <a href="#">Home</a> <!-- Modified href -->
         <a href="#programs">Programs</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="scroll-to-bottom">Contact</a>
     </div>
     
     <div>
@@ -369,6 +520,32 @@
 <hr style="margin-top: 60px; margin-bottom: 60px;">
 
 </div>
+
+
+
+<h1 class="heading" style="color: #3B1E54; font-weight: 900; display: flex;justify-content: center; font-family: Outfit, serif; ">Contacts</h1>
+<ul>
+  <ul>
+    <li>
+        <a href="mailto:iamyasoobzaidi@gmail.com">
+            <i class=" fb" aria-hidden="true"></i>
+            <span>Email</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://wa.me/7017588210?text=Hello%20there!%20I%20have%20a%20question.">
+            <i class=" wp" aria-hidden="true"></i>
+            <span>WhatsApp</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.instagram.com/sushmitashukla30/">
+            <i class=" ig" aria-hidden="true"></i>
+            <span>Instagram</span>
+        </a>
+    </li>
+</ul>
+
     </main>
 
     <script>
@@ -415,6 +592,22 @@
         // Calculate blur based on scroll position
         const blurAmount = Math.min(scrollPosition / 10, 20); // Limit the blur effect
         parallax.style.filter = `blur(${blurAmount}px)`; // Apply blur
+        
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the button or link that will trigger the scroll
+        const scrollToBottomButton = document.querySelector('.scroll-to-bottom');
+
+        // Add click event listener
+        scrollToBottomButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default behavior if it's a link
+
+            // Scroll to the bottom of the page
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth' // Smooth scroll animation
+            });
+        });
     });
     </script>
     
