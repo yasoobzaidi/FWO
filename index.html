@@ -20,15 +20,23 @@
 }
 
 .parallax {
-    background-image: url(./IMG_0345.JPEG.jpg); /* Background image */
-    height: 100vh; /* Full viewport height */
-    background-attachment: fixed; /* Parallax effect */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating */
-    background-size: cover; /* Cover the entire area */
-    position: relative; /* Positioning for child elements */
-    z-index: -1; /* Behind all content */
-    transition: filter 0.5s ease; /* Smooth transition for blur effect */
+    background-image: url(./IMG_0345.JPEG.jpg);
+    height: 100vh;
+    background-attachment: fixed; /* Fixed for larger screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+    transition: filter 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .parallax {
+        background-attachment: scroll; /* Scroll for mobile */
+        background-size: cover; /* Ensure it covers the area */
+        min-height: 500px; /* Set a minimum height */
+    }
 }
 
 /* Content container to overlay text and other elements */
