@@ -9,35 +9,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="./a minimal logo for a fitness page named FWO featuring a girl with wings.png">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
     <style>
-        body {
+body {
     margin: 0;
     padding: 0;
-    font-family: "Playwrite GB S", cursive;
-    color: #FFF; /* White text for contrast */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: "Montserrat", sans-serif;
+    color: #FFF;
+    overflow-x: hidden;
+    position: relative;
 }
 
-.parallax {
-    background-image: url(./IMG_0345.JPEG.png);
-    height: 100vh;
-    background-attachment: fixed; /* Fixed for larger screens */
+/* Solid background color behind the image */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Solid color for no vignette effect */
+    z-index: -2; /* Place behind the blurred image */
+}
+
+/* Background image as a second pseudo-element */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./saundarya-srinivasan-9CFwOcFCcDI-unsplash.jpg"); /* Replace with your image path */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
     z-index: -1;
-    transition: filter 0.5s ease;
+    opacity: 0.9; /* Slightly lower opacity to blend with solid color */
+    transition: filter 1s ease;
+    pointer-events: none;
 }
 
+/* Blurred background */
+body.blurred::after {
+    filter: blur(7px);
+}
+
+/* Mobile-specific styles */
 @media (max-width: 768px) {
-    .parallax {
-        background-attachment: scroll; /* Scroll for mobile */
-        background-size: cover; /* Ensure it covers the area */
-        min-height: 500px; /* Set a minimum height */
+    /* Ensure the background does not scroll */
+    body::after {
+        background-attachment: fixed; /* Make background fixed on mobile */
+    }
+
+    /* Optional: Adjust blur for mobile if needed */
+    body.blurred::after {
+        filter: blur(10px); /* Adjust blur for mobile if needed */
     }
 }
+
+
+
+
 
 /* Content container to overlay text and other elements */
 .content {
@@ -51,7 +86,7 @@
             font-family: "Outfit" , serif;
             position: sticky;
             top: 0;
-            background-color: #3B1E54; /* Darker purple for navbar */
+            background-color: #130909; /* Darker purple for navbar */
             padding: 15px;
             display: flex;
             justify-content: center; /* Centering items */
@@ -70,7 +105,7 @@
             top: 15px;
             padding: 10px; /* Reduced padding when shrunk */
             border-radius: 20px; /* Pill shape */
-            background-color: rgba(64, 48, 57, 0.217); /* More transparent when shrunk */
+            background-color:rgba(34, 16, 16, 0.534); /* More transparent when shrunk */
             backdrop-filter: blur(10px); /* Blur effect for the background */
             transform: scale(0.9); /* Scale down the navbar */
         }
@@ -84,7 +119,7 @@
         }
         /* Thick break line styles */
         hr {
-            border: 3px solid #3B1E54;
+            border: 3px solid #afafaf;
             width: 100%;
             margin: 30px 0;
         }
@@ -186,7 +221,7 @@
                 top: 15px;
                 padding: 10px; /* Reduced padding when shrunk */
                 border-radius:20px; /* Pill shape */
-                background-color: rgba(64, 48, 57, 0.217); /* More transparent when shrunk */
+                background-color: rgba(34, 16, 16, 0.534); /* More transparent when shrunk */
                 backdrop-filter: blur(10px); /* Blur effect for the background */
                 transform: scale(0.8); /* Scale down the navbar */
             }
@@ -227,13 +262,13 @@
         }
 
         .program {
-            color: #3B1E54;
+            color: #000;
             position: relative; /* Allow positioning of WhatsApp button */
             margin: 20px; /* Space between program sections */
-            border: 1px solid #3B1E54; /* Border around each program */
+            border: 1px solid #EEEEEE; /* Border around each program */
             padding: 20px; /* Padding inside each program */
             border-radius: 10px; /* Rounded corners */
-            background-color: white; /* White background for contrast */
+            background-color: #d9d9d9; /* White background for contrast */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
             flex: 1 1 300px; /* Flex items to be responsive */
             max-width: 350px; /* Maximum width for each program */
@@ -249,7 +284,7 @@
         .whatsapp-button a {
             display: inline-flex; /* Flexbox for alignment */
             align-items: center; /* Center icon and text */
-            background-color: #25D366; /* WhatsApp green */
+            background-color: #12813b; /* WhatsApp green */
             color: white; /* White text */
             padding: 10px 20px; /* Padding inside the button */
             border-radius: 5px; /* Rounded corners */
@@ -434,10 +469,10 @@
     
     <div>
         <h1 style="margin-top: 175px;">
-            <div style="font-family: Outfit, serif; color: black; font-size: 50px;">FITTER WAY OUT</div>
-            <div style="color: #3B1E54;">by Sushmita Shukla</div>
+            <div style="font-family: Outfit, serif; color: #EEEEEE; font-size: 50px;">FITTER WAY OUT</div>
+            <div style="color: #d9d9d9;font-weight: 500;">by Sushmita Shukla</div>
         </h1>
-        <p style="color: #3B1E54; font-weight: 900;">Create a way of life, not a phase of life</p>
+        <p style="color: #d9d9d9; font-weight: 500;">Create a way of life, not a phase of life</p>
     
         <!-- Thick break line between text and image -->
         <hr style="margin-top: 200px;margin-bottom: 50px;">
@@ -451,8 +486,8 @@
         
             <!-- Text Section -->
             <div class="text-container">
-                <h2 style="font-family: Outfit, serif; font-size: 30px;">About</h2>
-                <p>
+                <h2 style="font-family: Outfit, serif; font-size: 30px;font-weight: 900;color: #EEEEEE;">ABOUT</h2>
+                <p style="font-weight: 500;color: #d9d9d9;">
                     Fitness has much more to do than just having a slimmer waist. It is defined by how you feel; it is a lifestyle that you follow for the value of your soundness rather than people's judgments. Through this program, I'll be guiding you to get back to your basics and form a sustainable plan that can be followed as a lifestyle. Because deprivation cannot be a way of life. This is a fitter way out from those boring fads that you have been hearing, as I am here to help you break the cycle of being on and off a diet. SAY YES TO YOUR FAVOURITE FOODS, BE IT THE NORTH INDIAN RAJMA CHAWAL OR PARATHAS. I am here to add balance over restriction.
                 </p>
             </div>
@@ -462,33 +497,33 @@
         <hr style="margin-top: 60px; margin-bottom: 60px;">
 
         <!-- Transformation Journey Section -->
-        <h2 style="display: flex; justify-content: center;font-family: Outfit, serif; font-size: 30px;font-weight:600; color: #3B1E54;margin-bottom: -30px;">Transformation Journey</h2>
+        <h2 style="display: flex; justify-content: center;font-family: Outfit, serif; font-size: 30px;font-weight:900; color: #EEEEEE;margin-bottom: -30px;">TRANSFORMATION JOURNEY</h2>
 
         <!-- Collage Section -->
         <div class="collage-container">
             <div class="collage-image">
-                <p class="collage-text">Before</p>
+                <p class="collage-text" style="font-weight: 600; color: #EEEEEE;">BEFORE</p>
                 <img src="./bfore.jpeg" alt="Before Image">
             </div>
             <div class="collage-image">
-                <p class="collage-text">After</p>
+                <p class="collage-text" style="font-weight: 600; color: #EEEEEE;">AFTER</p>
                 <img src="./aftr.jpeg" alt="After Image">
             </div>
         </div>
-        <p class="transformation-message">
+        <p class="transformation-message" style="font-weight: 500;color: #d9d9d9;">
             Witness the incredible transformation! Our program focuses on sustainable fitness, ensuring you enjoy your favorite foods while achieving your goals.
         </p>
         <hr style="margin-top: 60px; ">
-        <h1 id="programs" style="font-family: Outfit, serif;color: #3B1E54; margin-top: 40px;">Our Programs</h1>
+        <h1 id="programs" style="font-family: Outfit, serif;color: #EEEEEE; margin-top: 40px;font-weight: 900;">OUR PROGRAMS</h1>
 
     <!-- Programs Container -->
     <div class="programs-container">
         <!-- 1 Month Program -->
         <div class="program">
             <h2>1 Month Program</h2>
-            <p style="margin-bottom: 50px;">Includes a personalized 1-month nutrition plan with no fads or crash diets. All meal plans will be provided according to your convenience considering your food preferences.</p>
+            <p style="margin-bottom: 50px; color: #000;">Includes a personalized 1-month nutrition plan with no fads or crash diets. All meal plans will be provided according to your convenience considering your food preferences.</p>
             <div class="whatsapp-button">
-                <a style="font-family: Outfit,serif;" href="https://wa.me/7017588210?text=Interested%20in%20the%201%20Month%20Program!" target="_blank">
+                <a style="font-family: Outfit,serif;" href="https://wa.me/8317041115?text=Interested%20in%20the%201%20Month%20Program!" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -497,9 +532,9 @@
         <!-- 1 on 1 Consultation -->
         <div class="program">
             <h2>1-on-1 Consultation</h2>
-            <p style="margin-bottom: 50px;">This is a 1-hour video call to give you an idea of your eating pattern to fulfill your daily macro & micro nutrient needs. You'll be kept in touch for a week for how you should be eating according to your body type.</p>
+            <p style="margin-bottom: 50px; color: #000;">This is a 1-hour video call to give you an idea of your eating pattern to fulfill your daily macro & micro nutrient needs. You'll be kept in touch for a week for how you should be eating according to your body type.</p>
             <div class="whatsapp-button">
-                <a style="font-family: Outfit,serif;"href="https://wa.me/7017588210?text=Interested%20in%20the%201%20on%201%20Consultation!" target="_blank" >
+                <a style="font-family: Outfit,serif;"href="https://wa.me/8317041115?text=Interested%20in%20the%201%20on%201%20Consultation!" target="_blank" >
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -508,9 +543,9 @@
         <!-- 1 Month Home Workout Plan -->
         <div class="program">
             <h2>1 Month Home Workout Plan</h2>
-            <p style="margin-bottom: 50px;">If you're someone who can't hit the gym, this is a 1-month workout plan that provides you with home workouts under the guidance of our trainers. Considering your strength and stamina, we'll design a workout to gradually build your strength at the comfort of your home.</p>
+            <p style="margin-bottom: 50px; color: #000;">If you're someone who can't hit the gym, this is a 1-month workout plan that provides you with home workouts under the guidance of our trainers. Considering your strength and stamina, we'll design a workout to gradually build your strength at the comfort of your home.</p>
             <div class="whatsapp-button">
-                <a style="font-family: Outfit,serif;" href="https://wa.me/7017588210?text=Interested%20in%20the%201%20Month%20Home%20Workout%20Plan!" target="_blank">
+                <a style="font-family: Outfit,serif;" href="https://wa.me/8317041115?text=Interested%20in%20the%201%20Month%20Home%20Workout%20Plan!" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -523,25 +558,25 @@
 
 
 
-<h1 class="heading" style="color: #3B1E54; font-weight: 900; display: flex;justify-content: center; font-family: Outfit, serif; ">Contacts</h1>
+<h1 class="heading" style="color: #EEEEEE; font-weight: 900; display: flex;justify-content: center; font-family: Outfit, serif; ">CONTACTS</h1>
 <ul>
   <ul>
     <li>
-        <a href="mailto:iamyasoobzaidi@gmail.com">
+        <a href="mailto:itssushmitashukla73@gmail.com">
             <i class=" fb" aria-hidden="true"></i>
-            <span>Email</span>
+            <span style="font-weight: 500;">Email</span>
         </a>
     </li>
     <li>
-        <a href="https://wa.me/7017588210?text=Hello%20there!%20I%20have%20a%20question.">
+        <a href="https://wa.me/8317041115?text=Hello%20there!%20I%20have%20a%20question.">
             <i class=" wp" aria-hidden="true"></i>
-            <span>WhatsApp</span>
+            <span style="font-weight: 500;">WhatsApp</span>
         </a>
     </li>
     <li>
-        <a href="https://www.instagram.com/sushmitashukla30/">
+        <a href="https://www.instagram.com/fitterwayout/">
             <i class=" ig" aria-hidden="true"></i>
-            <span>Instagram</span>
+            <span style="font-weight: 500;">Instagram</span>
         </a>
     </li>
 </ul>
@@ -549,6 +584,15 @@
     </main>
 
     <script>
+    window.addEventListener("scroll", () => {
+        const scrollThreshold = 50; // Adjust this value as needed
+        if (window.scrollY > scrollThreshold) {
+            document.body.classList.add("blurred");
+        } else {
+            document.body.classList.remove("blurred");
+        }
+    });
+
         window.onscroll = function() { shrinkNavbar() }; // Bind scroll event to shrinkNavbar function
         
         function shrinkNavbar() {
