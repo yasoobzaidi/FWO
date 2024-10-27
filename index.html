@@ -58,7 +58,7 @@ body.blurred::after {
 }
 
 /* Mobile-specific styles */
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
     /* Ensure the background does not scroll */
     body::after {
         background-attachment: fixed; /* Make background fixed on mobile */
@@ -85,24 +85,24 @@ body.blurred::after {
         .navbar {
             font-family: "Outfit" , serif;
             position: sticky;
-            top: 0;
+            top: 20px;
             background-color: #130909; /* Darker purple for navbar */
             padding: 15px;
             display: flex;
             justify-content: center; /* Centering items */
             z-index: 1000; /* Ensure navbar is above other content */
-            transition: all 0.25s ease; /* Smooth transition for size changes */
+            transition: all 0.5s ease; /* Smooth transition for size changes */
         }
         .navbar a {
             color: white; /* White text for links */
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 10px 50px;
             border-radius: 5px; /* Default border radius */
             transition: background-color 0.3s, border-radius 0.5s; /* Smooth background and border-radius change */
             margin: 0 10px; /* Add some horizontal spacing between links */
         }
         .navbar.shrink {
-            top: 15px;
+            top: 20px;
             padding: 10px; /* Reduced padding when shrunk */
             border-radius: 20px; /* Pill shape */
             background-color:rgba(34, 16, 16, 0.534); /* More transparent when shrunk */
@@ -211,12 +211,18 @@ body.blurred::after {
             hr {
                 margin: 20px 0; /* Adjust margin for hr on mobile */
             }
-            .navbar a:hover {
-                background-color: rgba(0, 0, 0, 0); /* Background color on hover */
-                border-radius: 100px; /* Set border radius on hover */
-                transition: 0.3s ease;
-                transform: scale(1.15);
+            .navbar a {
+                transition: transform 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+                color: #EEEEEE;
             }
+
+            .navbar a:hover {
+               color: #EEEEEE;
+               background-color: rgba(0, 0, 0, 0); /* Background color on hover */
+               border-radius: 100px; /* Set border radius on hover */
+               transform: scale(1.15); /* Smooth scaling */
+            }
+
             .navbar.shrink {
                 top: 15px;
                 padding: 10px; /* Reduced padding when shrunk */
@@ -224,6 +230,12 @@ body.blurred::after {
                 background-color: rgba(34, 16, 16, 0.534); /* More transparent when shrunk */
                 backdrop-filter: blur(10px); /* Blur effect for the background */
                 transform: scale(0.8); /* Scale down the navbar */
+            }
+            .navbar.shrink a{
+                color: rgb(197, 197, 197);
+            }
+            .navbar.shrink a:hover{
+                color: #EEEEEE;
             }
             /* Collage Styles for Mobile */
             .collage-container {
@@ -523,7 +535,7 @@ body.blurred::after {
             <h2>1 Month Program</h2>
             <p style="margin-bottom: 50px; color: #000;">Includes a personalized 1-month nutrition plan with no fads or crash diets. All meal plans will be provided according to your convenience considering your food preferences.</p>
             <div class="whatsapp-button">
-                <a style="font-family: Outfit,serif;" href="https://wa.me/+918317041115?text=Interested%20in%20the%201%20Month%20Program!" target="_blank">
+                <a style="font-family: Outfit, serif;" href="https://wa.me/+918317041115?text=Interested%20in%20the%201%20Month%20Program!" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -534,7 +546,7 @@ body.blurred::after {
             <h2>1-on-1 Consultation</h2>
             <p style="margin-bottom: 50px; color: #000;">This is a 1-hour video call to give you an idea of your eating pattern to fulfill your daily macro & micro nutrient needs. You'll be kept in touch for a week for how you should be eating according to your body type.</p>
             <div class="whatsapp-button">
-                <a style="font-family: Outfit,serif;"href="https://wa.me/+918317041115?text=Interested%20in%20the%201%20on%201%20Consultation!" target="_blank" >
+                <a style="font-family: Outfit,serif;"href="https://wa.me/8317041115?text=Interested%20in%20the%201%20on%201%20Consultation!" target="_blank" >
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -545,7 +557,7 @@ body.blurred::after {
             <h2>1 Month Home Workout Plan</h2>
             <p style="margin-bottom: 50px; color: #000;">If you're someone who can't hit the gym, this is a 1-month workout plan that provides you with home workouts under the guidance of our trainers. Considering your strength and stamina, we'll design a workout to gradually build your strength at the comfort of your home.</p>
             <div class="whatsapp-button">
-                <a style="font-family: Outfit,serif;" href="https://wa.me/+918317041115?text=Interested%20in%20the%201%20Month%20Home%20Workout%20Plan!" target="_blank">
+                <a style="font-family: Outfit,serif;" href="https://wa.me/8317041115?text=Interested%20in%20the%201%20Month%20Home%20Workout%20Plan!" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -568,7 +580,7 @@ body.blurred::after {
         </a>
     </li>
     <li>
-        <a href="https://wa.me/+918317041115?text=Hello%20there!%20I%20have%20a%20question.">
+        <a href="https://wa.me/8317041115?text=Hello%20there!%20I%20have%20a%20question.">
             <i class=" wp" aria-hidden="true"></i>
             <span style="font-weight: 500;">WhatsApp</span>
         </a>
