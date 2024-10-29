@@ -61,8 +61,9 @@ body.blurred::after {
 @media (max-width: 900px) {
     /* Ensure the background does not scroll */
     body::after {
-        background-image: url("./mobile\ wll.jpg"); /* Mobile-specific image */
-        background-attachment: fixed; /* Make background fixed on mobile */
+        background-size: cover; /* Fit within the screen and maintain aspect ratio */
+        background-position: center top; /* Center image from the top */
+        background-attachment: fixed; /* Prevents jarring fixed background on mobile */
     }
 
     /* Optional: Adjust blur for mobile if needed */
